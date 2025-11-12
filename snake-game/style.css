@@ -1,0 +1,75 @@
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      color: white;
+      font-family: Arial;
+      height: 100vh;
+      font-style: poppins;
+      gap: 10px;
+    }
+    canvas {
+      background: #222;
+      border: 2px solid #00ff88;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #00ff88;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #111;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00cc66;
+    }
+
+    #scoreDisplay {
+  font-size: 28px;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ffaa;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+  animation: glowPulse 2s infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#scoreDisplay::before {
+  content: "💫";
+  font-size: 24px;
+  animation: spinIcon 2s linear infinite;
+}
+
+/* Neon pulse animation */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ffaa, 0 0 30px #00ffcc;
+  }
+  100% {
+    text-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffaa, 0 0 75px #00ff88;
+  }
+}
+
+/* Icon rotation animation */
+@keyframes spinIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* When score updates, make it pop */
+.score-bump {
+  transform: scale(1.3);
+  color: #aaff00;
+  text-shadow: 0 0 20px #aaff00, 0 0 40px #aaff00;
+}
